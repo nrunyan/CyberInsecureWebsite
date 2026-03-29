@@ -1,0 +1,17 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    @if(Model!=null){
+        <h1>@Model.Name AHHHHHHH</h1>
+
+    }else{
+        <h1 class="display-4">Welcome </h1>
+        <p>TODO add logic for not logged in</p>
+        <p>Please <a asp-action="Login">Login</a> </p>
+
+    }
+    
+
+</div>
