@@ -23,7 +23,6 @@
 /home/nrunyan/CyberProjects/InsecureWebsite/obj/Debug/net10.0/scopedcss/projectbundle/InsecureWebsite.bundle.scp.css
 /home/nrunyan/CyberProjects/InsecureWebsite/obj/Debug/net10.0/compressed/gq2x7p9vjl-{0}-lugek5hnai-lugek5hnai.gz
 /home/nrunyan/CyberProjects/InsecureWebsite/obj/Debug/net10.0/compressed/2as8yosmz9-{0}-61n19gt1b8-61n19gt1b8.gz
-/home/nrunyan/CyberProjects/InsecureWebsite/obj/Debug/net10.0/compressed/x8riruejo8-{0}-fr7q2aak1r-fr7q2aak1r.gz
 /home/nrunyan/CyberProjects/InsecureWebsite/obj/Debug/net10.0/compressed/4royqp273s-{0}-bqjiyaj88i-bqjiyaj88i.gz
 /home/nrunyan/CyberProjects/InsecureWebsite/obj/Debug/net10.0/compressed/0w8tjh0izo-{0}-c2jlpeoesf-c2jlpeoesf.gz
 /home/nrunyan/CyberProjects/InsecureWebsite/obj/Debug/net10.0/compressed/c30vvv59ll-{0}-erw9l3u2r3-erw9l3u2r3.gz
@@ -95,3 +94,5 @@
 /home/nrunyan/CyberProjects/InsecureWebsite/obj/Debug/net10.0/InsecureWebsite.pdb
 /home/nrunyan/CyberProjects/InsecureWebsite/obj/Debug/net10.0/InsecureWebsite.genruntimeconfig.cache
 /home/nrunyan/CyberProjects/InsecureWebsite/obj/Debug/net10.0/ref/InsecureWebsite.dll
+/home/nrunyan/CyberProjects/InsecureWebsite/obj/Debug/net10.0/InsecureWebsite.sourcelink.json
+/home/nrunyan/CyberProjects/InsecureWebsite/obj/Debug/net10.0/compressed/x8riruejo8-{0}-xqe1dpvthy-xqe1dpvthy.gz

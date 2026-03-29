@@ -38,25 +38,4 @@ public class HomeController : Controller
 
 
 
-[HttpPost]
-[Route("AlertMaintenance/SaveAlert")]
-public async Task<IActionResult> SaveAlert([FromBody] AlertDto alertDto)
-{
-    
-    alertDto.AlertId = GenerateNewAlertId(alertDto.OldAlertId ?? 0);
-    alertDto.CreatedBy = _userSecurityService.ActualUserLoginName;
-
-    var result = await _alertMaintenanceFactory.SaveAlert(alertDto);
-
-    // 3. If save succeeded, delete old alert
-    if (result != null && alertDto.OldAlertId.HasValue)
-    {
-        await _alertMaintenanceFactory.DeleteAlert(
-            new AlertDto { AlertId = alertDto.OldAlertId.Value }
-        );
-    }
-
-    return Json(result);
-}
-
 }
