@@ -29,3 +29,35 @@ body {
 .form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
   text-align: start;
 }
+
+.confetti-container{
+  user-select: none;
+}
+
+.celebrate {
+  height: 50px;
+  width: 50px;
+  align-items: center;
+  color: blueviolet;
+  animation-duration: 3s;
+  animation-name: confetti;
+  visibility: visible;
+
+
+}
+@keyframes confetti{
+  0%{
+    background-color: red;
+
+  }
+  50%{
+    scale: 2;
+  }
+  100%{
+    background-color: yellow;
+    right: 100%;
+    rotate: (360deg);
+  }
+}
+
+
