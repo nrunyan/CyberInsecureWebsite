@@ -1,0 +1,46 @@
+@using Microsoft.AspNetCore.Identity
+
+<link rel="stylesheet" href="site.css">
+
+@{
+    ViewData["title"]= "Valid Users";
+}
+
+<h1>@ViewData["title"]</h1>
+
+
+
+<div></div>
+<div class="confetti-container">
+    <div class="celebrate"></div>
+</div>
+
+<table>
+    <tr>
+        <th>Usernames  </th>
+        <th>Passwords  </th>
+        <th>Is Admin?</th>
+    </tr>
+    @foreach(var uname in Model){
+        <tr>
+            <td>
+                @uname.Name
+            </td>
+            <td>
+                @uname.Password
+            </td>
+            <td>
+                @uname.IsAdmin
+            </td>
+        </tr>
+
+    }
+
+    
+    <tr>
+        <td>
+            
+        </td>
+    </tr>
+</table>
+

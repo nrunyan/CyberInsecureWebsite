@@ -1,13 +1,16 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using InsecureWebsite.Models;
+using System.Globalization;
 
 namespace InsecureWebsite.Controllers;
 
 public class HomeController : Controller
 {
-    public IActionResult Index()
+    public ViewResult Index()
     {
+        ViewBag.greeting= "Hello";
+          
         return View();
     }
 
@@ -25,8 +28,8 @@ public class HomeController : Controller
     [HttpPost]
     public ActionResult Login(Username u)
     {
-        
-        return RedirectToAction("Index",u);
+        Repository.AddUsername(u);
+        return View("Thanks",u);
     }
 
 
