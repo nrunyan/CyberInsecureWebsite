@@ -1,0 +1,22 @@
+@model InsecureWebsite.Models.Username
+@{
+    ViewData["Title"] = "Login";
+}
+
+<div class="text-center">
+    <h1>Level 1 — Login</h1>
+    <p>Please Login.</p>
+    <p><strong>DON'T PUT IN ACTUAL PASSWORDS PLEASE ITS FOR YOUR OWN GOOD</strong></p>
+</div>
+
+<form asp-controller="Level1" asp-action="Login" method="post">
+    <p>
+        <label asp-for="Name">Username:</label>
+        <input asp-for="Name" />
+    </p>
+    <p>
+        <label asp-for="Password">Password:</label>
+        <input asp-for="Password" />
+    </p>
+    <button type="submit">Login</button>
+</form>
