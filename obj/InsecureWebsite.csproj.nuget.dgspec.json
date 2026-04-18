@@ -1,26 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "/home/nrunyan/CyberProjects/InsecureWebsite/InsecureWebsite.csproj": {}
+    "/home/skizzy/School/Cyber/CyberInsecureWebsite/InsecureWebsite.csproj": {}
   },
   "projects": {
-    "/home/nrunyan/CyberProjects/InsecureWebsite/InsecureWebsite.csproj": {
+    "/home/skizzy/School/Cyber/CyberInsecureWebsite/InsecureWebsite.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/nrunyan/CyberProjects/InsecureWebsite/InsecureWebsite.csproj",
+        "projectUniqueName": "/home/skizzy/School/Cyber/CyberInsecureWebsite/InsecureWebsite.csproj",
         "projectName": "InsecureWebsite",
-        "projectPath": "/home/nrunyan/CyberProjects/InsecureWebsite/InsecureWebsite.csproj",
-        "packagesPath": "/home/nrunyan/.nuget/packages/",
-        "outputPath": "/home/nrunyan/CyberProjects/InsecureWebsite/obj/",
+        "projectPath": "/home/skizzy/School/Cyber/CyberInsecureWebsite/InsecureWebsite.csproj",
+        "packagesPath": "/home/skizzy/.nuget/packages/",
+        "outputPath": "/home/skizzy/School/Cyber/CyberInsecureWebsite/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/nrunyan/.nuget/NuGet/NuGet.Config"
+          "/home/skizzy/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net10.0"
         ],
         "sources": {
-          "/usr/lib/dotnet/library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -63,7 +62,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/10.0.101/PortableRuntimeIdentifierGraph.json",
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/10.0.104/PortableRuntimeIdentifierGraph.json",
           "packagesToPrune": {
             "Microsoft.AspNetCore": "(,10.0.32767]",
             "Microsoft.AspNetCore.Antiforgery": "(,10.0.32767]",
