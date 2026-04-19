@@ -30,34 +30,181 @@ body {
   text-align: start;
 }
 
-.confetti-container{
-  user-select: none;
+table, th, td,tr {
+  border: 1px solid black;
 }
 
-.celebrate {
-  height: 50px;
-  width: 50px;
+
+
+/* From Uiverse.io by Na3ar-17 */ 
+.button {
+  border: none;
+  outline: none;
+  background-color: #3a3a3a;
+  width: 180px;
+  height: 60px;
+  font-size: 18px;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
   align-items: center;
-  color: blueviolet;
-  animation-duration: 3s;
-  animation-name: confetti;
-  visibility: visible;
-
-
-}
-@keyframes confetti{
-  0%{
-    background-color: red;
-
-  }
-  50%{
-    scale: 2;
-  }
-  100%{
-    background-color: yellow;
-    right: 100%;
-    rotate: (360deg);
-  }
+  cursor: pointer;
+  position: relative;
+  transition: all 0.3s;
 }
 
+.button::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  width: 106%;
+  height: 120%;
+  z-index: -1;
+  border-radius: inherit;
+  transition: all 0.3s;
+}
+
+.gradient-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 106%;
+  height: 115%;
+  overflow: hidden;
+  border-radius: inherit;
+  z-index: -2;
+  filter: blur(10px);
+  transition: all 0.3s;
+}
+
+.gradient {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 110%;
+  aspect-ratio: 1;
+  border-radius: 100%;
+  transition: all .3s;
+  background-image: linear-gradient(
+    90deg,
+    hsl(226, 81%, 64%),
+    hsl(271, 81%, 64%),
+    hsl(316, 81%, 64%),
+    hsl(1, 81%, 64%),
+    hsl(46, 81%, 64%),
+    hsl(91, 81%, 64%),
+    hsl(136, 81%, 64%),
+    hsl(181, 81%, 64%)
+  );
+  animation: rotate 10s linear infinite;
+  filter: blur(10px);
+}
+
+.gradient:hover{
+  animation :rotate 2s linear infinite;
+}
+
+/* .label {
+  width: 156px;
+  height: 45px;
+  text-align: center;
+  line-height: 45px;
+  border-radius: 22px;
+  background-color: rgba(43, 43, 43, 1);
+  background-image: linear-gradient(
+    180deg,
+    rgb(43, 43, 43) 0%,
+    rgb(68, 68, 68) 100%
+  );
+} */
+
+.button:hover .gradient-container {
+  transform: translate(-50%, -50%) scale(0.98);
+  filter: blur(5px);
+}
+
+.button:hover .gradient {
+  filter: blur(5px);
+}
+
+@keyframes rotate {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+
+    body {
+        background-color: #000;
+        color: #00ff00;
+        font-family: "Courier New", Courier, monospace;
+    }
+
+    h1, h2, h3 {
+        color: #00ff00;
+        text-shadow: 0 0 5px #00ff00;
+    }
+
+    a {
+        color: #00ff00;
+        text-decoration: none;
+    }
+
+    a:hover {
+        color: #ffff00;
+        text-shadow: 0 0 8px #ffff00;
+    }
+
+    .terminal-box {
+        border: 1px solid #00ff00;
+        padding: 20px;
+        margin: 40px auto;
+        width: 60%;
+        box-shadow: 0 0 10px #00ff00;
+        background-color: #000;
+    }
+
+    .btn {
+        display: block;
+        width: 250px;
+        margin: 15px auto;
+        padding: 12px;
+        background: black;
+        border: 1px solid #00ff00;
+        color: #00ff00;
+        text-align: center;
+        cursor: pointer;
+        transition: 0.2s;
+    }
+
+    .btn:hover {
+        background: #00ff00;
+        color: black;
+        box-shadow: 0 0 10px #00ff00;
+    }
+
+    input, button {
+        background: black;
+        color: #00ff00;
+        border: 1px solid #00ff00;
+        padding: 8px;
+        font-family: inherit;
+    }
+
+    button:hover {
+        background: #00ff00;
+        color: black;
+        box-shadow: 0 0 8px #00ff00;
+    }
 
