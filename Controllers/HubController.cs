@@ -18,6 +18,11 @@ public class HubController : Controller
         Controller = "Level1",
         Action = "Index"}); // Where you want the redirect to point to in your URI
                             // ie "..../Level1/login" then we put "login"
+        levels.Add(new Level { Number = 2,
+        Name = "SQL Injection",
+        Description = "Basics of SQL Injection",
+        Controller = "Level2",
+        Action = "Index"});
 
         return View(levels);
     }
