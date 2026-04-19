@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Cyber Security Project</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+
+    <style>
+        @@font-face {
+            font-family: 'Transformers';
+            src: url('/fonts/micheal-bay.ttf'); 
+        }
+
+        body {
+            font-family: 'Transformers', sans-sherif;
+        }
+    </style>
+</head>
+<body class="bg-dark text-light">
+
+    <header class="py-4 text-center border-bottom border-secondary mb-5">
+        <h1 class="display-4">Cyber Insecurities</h1>
+    </header>
+
+    <div class="container">
+        <main role="main">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="text-center text-secondary mt-5 py-3 border-top border-secondary">
+        <small>STRICTLY for eductional purposes</small>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+
+</body>
+</html>

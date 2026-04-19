@@ -1,8 +1,8 @@
 public class Level
 {
-    public int Number { get; set; }
-    public string Name { get; set; }
-    public string Description { get; set; }
-    public string Controller { get; set; }
-    public string Action { get; set; }
+    public required int Number { get; set; }
+    public required string Name { get; set; }
+    public required string Description { get; set; }
+    public required string Controller { get; set; }
+    public required string Action { get; set; }
 }
