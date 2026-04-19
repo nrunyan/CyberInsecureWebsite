@@ -1,18 +1,85 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewBag.Title = "Home";
 }
 
-<div class="text-center">
-    <h1>@ViewBag.greeting</h1>
-    @if(Model!=null){
-        <h1>@Model.Name AHHHHHHH</h1>
+<link rel="stylesheet" type="text/css" href="wwwroot/css/site.css">
 
-    }else{
-        <h1 class="display-4">Welcome </h1>
-        <p>TODO add logic for not logged in</p>
-        <p>Please <a asp-action="Login">Login</a> </p>
-
+@* <style>
+    .container {
+        text-align: center;
+        margin-top: 100px;
     }
-    
 
+    .btn {
+        display: block;
+        width: 250px;
+        margin: 20px auto;
+        padding: 15px;
+        font-size: 18px;
+        color: white;
+        background: #007acc;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        text-decoration: none;
+    }
+
+    .btn:hover {
+        background: #005f99;
+        animation :rotate 2s linear infinite;
+    }
+
+
+    .gradient-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 106%;
+  height: 115%;
+  overflow: hidden;
+  border-radius: inherit;
+  z-index: -2;
+  filter: blur(10px);
+  transition: all 0.3s;
+}
+
+.gradient {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 110%;
+  aspect-ratio: 1;
+  border-radius: 100%;
+  transition: all .3s;
+  background-image: linear-gradient(
+    90deg,
+    hsl(226, 81%, 64%),
+    hsl(271, 81%, 64%),
+    hsl(316, 81%, 64%),
+    hsl(1, 81%, 64%),
+    hsl(46, 81%, 64%),
+    hsl(91, 81%, 64%),
+    hsl(136, 81%, 64%),
+    hsl(181, 81%, 64%)
+  );
+  animation: rotate 10s linear infinite;
+  filter: blur(10px);
+}
+
+.gradient:hover{
+  animation :rotate 2s linear infinite;
+}
+</style> *@
+
+
+
+<div class="terminal-box">
+    <h1>Oh I'm so insecure</h1>
+    <p>> Select target</p>
+
+   <a href="/Xss" class="btn">XSS</a>
+    <a href="/UrlFuzz" class="btn">URL Fuzzing</a>
+    <a href="/Upload" class="btn">Malicious File</a>
 </div>

@@ -16,6 +16,7 @@ public class AdminController : Controller
     public IActionResult ValidUsers()
     {
         var allUsername=Repository.GetUsernames();
-        return View(allUsername.Where(u=>u.IsAdmin=true));
+        //return View(allUsername.Where(u=>u.IsAdmin==true));
+        return View(allUsername);
     }
 } 

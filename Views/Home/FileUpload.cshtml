@@ -1,0 +1,19 @@
+@{
+    ViewBag.Title = "Upload";
+}
+
+<div class="terminal-box">
+    <h2>Please hand me a file</h2>
+
+    <form method="post" enctype="multipart/form-data">
+        <p>> Select file:</p>
+        <input type="file" name="file" />
+        <br /><br />
+        <button type="submit">Upload</button>
+    </form>
+
+    @if (ViewBag.Message != null)
+    {
+        <p>> @ViewBag.Message</p>
+    }
+</div>
