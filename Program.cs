@@ -1,3 +1,6 @@
+using System.ComponentModel.DataAnnotations.Schema;
+using InsecureWebsite.Models;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -25,5 +28,6 @@ app.MapControllerRoute(
     pattern: "{controller=Hub}/{action=Index}/{id?}")
     .WithStaticAssets();
 
+SqlDatabase.Initialize();
 
 app.Run();
