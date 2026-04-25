@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("InsecureWebsite")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2a7632c47a3b35f2001f740d215195e70518a5eb")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9eae5750c91a1fd7b49baf871c257cd637374516")]
 [assembly: System.Reflection.AssemblyProductAttribute("InsecureWebsite")]
 [assembly: System.Reflection.AssemblyTitleAttribute("InsecureWebsite")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
