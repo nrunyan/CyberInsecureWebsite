@@ -30,26 +30,6 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWRtaW4vVmFsaWRVc2Vycy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/skizzy/School/Cyber/CyberInsecureWebsite/Views/Home/FileUpload.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9GaWxlVXBsb2FkLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[/home/skizzy/School/Cyber/CyberInsecureWebsite/Views/Home/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9JbmRleC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[/home/skizzy/School/Cyber/CyberInsecureWebsite/Views/Home/Login.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9Mb2dpbi5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[/home/skizzy/School/Cyber/CyberInsecureWebsite/Views/Home/Privacy.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9Qcml2YWN5LmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[/home/skizzy/School/Cyber/CyberInsecureWebsite/Views/Home/Thanks.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9UaGFua3MuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
 [/home/skizzy/School/Cyber/CyberInsecureWebsite/Views/Hub/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSHViL0luZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -58,12 +38,20 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSHViL19WaWV3U3RhcnQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[/home/skizzy/School/Cyber/CyberInsecureWebsite/Views/Level1/FileUpload.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTGV2ZWwxL0ZpbGVVcGxvYWQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [/home/skizzy/School/Cyber/CyberInsecureWebsite/Views/Level1/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTGV2ZWwxL0xvZ2luLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [/home/skizzy/School/Cyber/CyberInsecureWebsite/Views/Level1/Thanks.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTGV2ZWwxL1RoYW5rcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/skizzy/School/Cyber/CyberInsecureWebsite/Views/Level2/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTGV2ZWwyL0luZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [/home/skizzy/School/Cyber/CyberInsecureWebsite/Views/Shared/Error.cshtml]
@@ -76,18 +64,6 @@ build_metadata.AdditionalFiles.CssScope =
 
 [/home/skizzy/School/Cyber/CyberInsecureWebsite/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[/home/skizzy/School/Cyber/CyberInsecureWebsite/Views/Upload/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVXBsb2FkL0luZGV4LmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[/home/skizzy/School/Cyber/CyberInsecureWebsite/Views/UrlFuzz/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVXJsRnV6ei9JbmRleC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[/home/skizzy/School/Cyber/CyberInsecureWebsite/Views/Xss/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvWHNzL0luZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [/home/skizzy/School/Cyber/CyberInsecureWebsite/Views/_ViewImports.cshtml]

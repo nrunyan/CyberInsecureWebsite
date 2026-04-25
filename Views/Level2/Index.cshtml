@@ -1,10 +1,10 @@
 @{
-    ViewBag.Title = "XSS level 1";
+    ViewData["Title"] = "XSS";
 }
 
-<h2>XSS</h2>
+<h2>Level 2 — XSS</h2>
 
-<form method="post">
+<form asp-controller="Level2" asp-action="Index" method="post">
     <input type="text" name="userInput" placeholder="Some humble text..." />
     <button type="submit">Submit</button>
 </form>

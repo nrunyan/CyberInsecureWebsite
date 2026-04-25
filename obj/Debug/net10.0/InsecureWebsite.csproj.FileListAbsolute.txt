@@ -22,7 +22,6 @@
 /home/skizzy/School/Cyber/CyberInsecureWebsite/obj/Debug/net10.0/scopedcss/Views/Shared/_Layout.cshtml.rz.scp.css
 /home/skizzy/School/Cyber/CyberInsecureWebsite/obj/Debug/net10.0/scopedcss/bundle/InsecureWebsite.styles.css
 /home/skizzy/School/Cyber/CyberInsecureWebsite/obj/Debug/net10.0/scopedcss/projectbundle/InsecureWebsite.bundle.scp.css
-/home/skizzy/School/Cyber/CyberInsecureWebsite/obj/Debug/net10.0/compressed/gq2x7p9vjl-{0}-b5qn3esl0d-b5qn3esl0d.gz
 /home/skizzy/School/Cyber/CyberInsecureWebsite/obj/Debug/net10.0/compressed/2as8yosmz9-{0}-61n19gt1b8-61n19gt1b8.gz
 /home/skizzy/School/Cyber/CyberInsecureWebsite/obj/Debug/net10.0/compressed/x8riruejo8-{0}-xqe1dpvthy-xqe1dpvthy.gz
 /home/skizzy/School/Cyber/CyberInsecureWebsite/obj/Debug/net10.0/compressed/4royqp273s-{0}-bqjiyaj88i-bqjiyaj88i.gz
@@ -125,3 +124,4 @@
 /home/skizzy/School/Cyber/CyberInsecureWebsite/bin/Debug/net10.0/runtimes/win-x86/native/e_sqlite3.dll
 /home/skizzy/School/Cyber/CyberInsecureWebsite/obj/Debug/net10.0/InsecureWebsite.csproj.AssemblyReference.cache
 /home/skizzy/School/Cyber/CyberInsecureWebsite/obj/Debug/net10.0/Insecure.5BB6C631.Up2Date
+/home/skizzy/School/Cyber/CyberInsecureWebsite/obj/Debug/net10.0/compressed/gq2x7p9vjl-{0}-hsl9n8g3pp-hsl9n8g3pp.gz

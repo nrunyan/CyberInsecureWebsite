@@ -22,4 +22,18 @@ public class Level1Controller : Controller
         Repository.AddUsername(u);
         return View("Thanks", u);
     }
+
+    [HttpGet]
+    public IActionResult FileUpload()
+    {
+        return View();
+    }
+
+    [HttpPost]
+    public IActionResult FileUpload(IFormFile file)
+    {
+        if (file != null)
+            ViewBag.Message = "File uploaded: " + file.FileName;
+        return View();
+    }
 }

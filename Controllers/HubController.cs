@@ -1,12 +1,17 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using InsecureWebsite.Models;
-using System.Security.Cryptography.X509Certificates;
 
 namespace InsecureWebsite.Controllers;
 
 public class HubController : Controller
 {
+    [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+    public IActionResult Error()
+    {
+        return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+    }
+
     public IActionResult Index()
     {
         var levels = new List<Level>();
@@ -19,8 +24,8 @@ public class HubController : Controller
         Action = "Index"}); // Where you want the redirect to point to in your URI
                             // ie "..../Level1/login" then we put "login"
         levels.Add(new Level { Number = 2,
-        Name = "SQL Injection",
-        Description = "Basics of SQL Injection",
+        Name = "XSS",
+        Description = "Cross-Site Scripting",
         Controller = "Level2",
         Action = "Index"});
         
