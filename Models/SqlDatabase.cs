@@ -4,7 +4,7 @@ namespace InsecureWebsite.Models
 {
     public static class SqlDatabase
     {
-        private const string ConnectionString = "Data Source=users.db";
+        private const string ConnectionString = "Data Source = users.db";
 
         public static void Initialize()
         {
@@ -21,6 +21,7 @@ namespace InsecureWebsite.Models
                 INSET OR IGNORE INTO users (id, username, password)
                 VALUES (1, 'admin', 'passwordpassword123');
             """;
+            
             cmd.ExecuteNonQuery();
         }
         public static SqliteConnection GetConnection()

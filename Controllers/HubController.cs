@@ -23,7 +23,7 @@ public class HubController : Controller
         Description = "Basics of SQL Injection",
         Controller = "Level2",
         Action = "Index"});
-
+        
         return View(levels);
     }
 }
