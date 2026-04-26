@@ -28,6 +28,12 @@ public class HubController : Controller
         Description = "Cross-Site Scripting",
         Controller = "Level2",
         Action = "Index"});
+
+        levels.Add(new Level { Number = 3,
+        Name = "SQLi",
+        Description = "Pass the three difficulties of SQL injection",
+        Controller = "Level3",
+        Action = "Easy"});
         
         return View(levels);
     }

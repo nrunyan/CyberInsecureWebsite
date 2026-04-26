@@ -28,4 +28,6 @@ app.MapControllerRoute(
     pattern: "{controller=Hub}/{action=Index}/{id?}")
     .WithStaticAssets();
 
+SqlDatabase.Initialize();
+
 app.Run();

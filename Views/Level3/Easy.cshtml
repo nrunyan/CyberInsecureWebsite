@@ -1,0 +1,20 @@
+@{
+    ViewData["Title"] = "Easy";
+}
+
+<h1>Movie Search</h1>
+
+<form method="post">
+    <input type="text" name="search" value="@ViewBag.Search" />
+    <button type="submit">Search</button>
+</form>
+
+@if (ViewBag.Results != null)
+{
+    <ul>
+        @foreach (var row in ViewBag.Results)
+        {
+            <li>@row</li>
+        }
+    </ul>
+}
