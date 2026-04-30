@@ -1,8 +1,17 @@
 @{
     ViewData["Title"] = "Easy";
 }
+<h1>Time Travler's Movie Review</h1>
+<br />
+<p>
+    Execute a simple SQL injection. This time traveler accidentally included a table 
+    entitled "unreleased" which includes a movie from the future which hasn't been released
+    yet, but which he has already reviewed. Find the "name" field (out of the 4 total fields) and submit it as the flag.
+</p>
 
-<h1>Movie Search</h1>
+<br />
+<br />
+<h2>Movie Search</h2>
 
 <form method="post">
     <input type="text" name="search" value="@ViewBag.Search" />
@@ -18,3 +27,21 @@
         }
     </ul>
 }
+<br />
+<br />
+<br />
+<br />
+<h2>Flag Submission</h2>
+<form method="EasyFlag">
+    <input type="text" name="search" placeholder="Secret Movie Title" />
+    <button type="submit">Submit Flag</button>
+</form>
+
+@if (ViewBag.FlagError != null)
+{
+    <p>@ViewBag.FlagError</p>
+}
+
+<br />
+<br />
+<a href="https://owasp.org/www-community/attacks/SQL_Injection">SQL Injection Help</a>
