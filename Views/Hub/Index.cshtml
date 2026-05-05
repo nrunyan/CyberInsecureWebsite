@@ -1,0 +1,43 @@
+@model List<Level>
+
+@{
+    ViewData["Title"] = "Cyber Insecurities";
+}
+
+<div class = "text-center">
+    <h1>@ViewData["Title"]</h1>
+    <p>Can you face the gauntlent of insecurities?</p>
+</div>
+
+
+@* return View("Congratulations",new Congrats("LoginLevel1")
+localStorage.setItem(@Model.Level,"Success"); *@
+@* levels.Add(new Level { Number = 1, 
+        Name = "Login", 
+        Description = "asdf",  // Description can be w/e, I was thinking of displaying it somewhere on button hover???
+        Controller = "Level1",
+        Action = "Index"}); // Where you want the redirect to point to in your URI
+                            // ie "..../Level1/login" then we put "login"
+        levels.Add(new Level { Number = 2, *@
+
+<div class="d-flex flex-wrap gap-3 justify-content-center mt-4">
+    @foreach (Level level in Model)
+    {
+        
+        <a asp-controller="@level.Controller"
+        asp-action="@level.Action"
+        class="btn btn-primary btn-lg" id="@level.Name@level.Number"
+        title=@level.Description">
+        Level @level.Number: @level.Name
+        </a>
+    }
+</div>
+@* <script>
+    var levelstring= ["LoginLevel1"]
+    for(string s in levelstring){
+        if(localStorage.getItem(s)){
+            const buttonguy =document.getElementById(s);
+            buttonguy.as
+        }
+    }
+</script> *@

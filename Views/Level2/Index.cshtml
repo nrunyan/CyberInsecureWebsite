@@ -1,0 +1,18 @@
+@{
+    ViewData["Title"] = "XSS";
+}
+
+<h2>Level 2 — XSS</h2>
+
+<form asp-controller="Level2" asp-action="Index" method="post">
+    <input type="text" name="userInput" placeholder="Some humble text..." />
+    <button type="submit">Submit</button>
+</form>
+
+@if (ViewBag.Output != null)
+{
+    <p>Output:</p>
+    <div>
+        @Html.Raw(ViewBag.Output)
+    </div>
+}
