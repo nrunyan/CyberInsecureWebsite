@@ -1,0 +1,52 @@
+@{
+    ViewData["Title"] = "Hard";
+}
+<h1>Time Traveler's Timeline</h1>
+<br />
+
+<p>
+    The time traveler keeps a record of significant events by year — notable deaths and scientific discoveries.<br />
+    However his database also contains a highly classified financial table from the future.<br />
+    The name of that table was leaked as the flag from the previous level.<br />
+    Within it lies a record locked behind a key. That key is something you have already found.<br />
+    Note: aggressive input sanitization has been applied. Your previous tricks may not be enough.
+</p>
+
+<br />
+<br />
+
+<h2>Timeline Search</h2>
+<form method="post">
+    <input type="number" name="search" value="@ViewBag.Search" placeholder="Enter year (e.g. 2077)" />
+    <button type="submit">Search</button>
+</form>
+
+@if (ViewBag.Results != null)
+{
+    <ul>
+        @foreach (var row in ViewBag.Results)
+        {
+            <li>@row</li>
+        }
+    </ul>
+}
+
+<br />
+<br />
+
+<div style="margin-top: 2rem;">
+    <h2>Submit Flag</h2>
+    <form method="post" asp-action="HardFlag">
+        <input type="text" name="flag" placeholder="Enter the peak price" />
+        <button type="submit">Submit</button>
+    </form>
+    @if (ViewBag.FlagError != null)
+    {
+        <p>@ViewBag.FlagError</p>
+    }
+</div>
+
+<br />
+<br />
+<br />
+<a href="https://portswigger.net/web-security/sql-injection/cheat-sheet">SQL Injection Cheat Sheet</a>

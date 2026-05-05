@@ -29,19 +29,19 @@
 }
 <br />
 <br />
+<div style="margin-top: 2rem;">
+    <h2>Submit Flag</h2>
+    <form method="post" asp-action="EasyFlag">
+        <input type="text" name="flag" placeholder="Secret Movie" />
+        <button type="submit">Submit</button>
+    </form>
+    @if (ViewBag.FlagError != null)
+    {
+        <p>@ViewBag.FlagError</p>
+    }
+</div>
 <br />
 <br />
-<h2>Flag Submission</h2>
-<form method="EasyFlag">
-    <input type="text" name="search" placeholder="Secret Movie Title" />
-    <button type="submit">Submit Flag</button>
-</form>
-
-@if (ViewBag.FlagError != null)
-{
-    <p>@ViewBag.FlagError</p>
-}
-
 <br />
 <br />
 <a href="https://owasp.org/www-community/attacks/SQL_Injection">SQL Injection Help</a>

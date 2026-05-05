@@ -6,6 +6,7 @@ namespace InsecureWebsite.Models
     {
         private const string FactsDb = "Data Source = facts.db";
         private const string TimeDb = "Data Source = time.db";
+        private const string CriticalDb = "Data Source = critical.db";
 
         public static void Initialize()
         {
@@ -55,7 +56,30 @@ namespace InsecureWebsite.Models
             CountryCsvUpload(timeConn, "Data/countries.csv");
             ExtinctCsvUpload(timeConn, "Data/extinct.csv");
 
-            // Database 3: idk
+            // Database 3: Some real shit
+            using var criticalConn = new SqliteConnection(CriticalDb);
+            criticalConn.Open();
+            var criticalCmd = criticalConn.CreateCommand();
+            criticalCmd.CommandText = """
+            CREATE TABLE IF NOT EXISTS timeline (
+                id INTEGER PRIMARY KEY,
+                year INTEGER NOT NULL,
+                celebrity_death TEXT NOT NULL,
+                scientific_discovery TEXT NOT NULL
+            );
+            CREATE TABLE IF NOT EXISTS "6f6eb17d4388c8c0ec0ba5555ef7312722c02d453aa0ce16869aadc9f001f3fb" (
+                id INTEGER PRIMARY KEY,
+                ticker TEXT NOT NULL,
+                peak_price INTEGER NOT NULL,
+                peak_year INTEGER NOT NULL,
+                low_price INTEGER NOT NULL,
+                low_year INTEGER NOT NULL,
+                key TEXT NOT NULL
+            );
+            """;
+            criticalCmd.ExecuteNonQuery();
+            TimelineCsvUpload(criticalConn, "Data/timeline.csv");
+            StocksCsvUpload(criticalConn, "Data/6f6eb17d4388c8c0ec0ba5555ef7312722c02d453aa0ce16869aadc9f001f3fb.csv");
         }
 
         public static SqliteConnection GetFactsConnection()
@@ -72,8 +96,58 @@ namespace InsecureWebsite.Models
             return connection;
         }
 
+        public static SqliteConnection GetCriticalConnection()
+        {
+            var connection = new SqliteConnection(CriticalDb);
+            connection.Open();
+            return connection;
+        }
+
+        private static void TimelineCsvUpload(SqliteConnection connection, string path)
+        {
+            var countCmd = connection.CreateCommand();
+            countCmd.CommandText = "SELECT COUNT(*) FROM timeline";
+            if ((long)countCmd.ExecuteScalar() > 0) return;
+
+            foreach (var line in File.ReadAllLines(path).Skip(1))
+            {
+                var parts = line.Split(",");
+                var cmd = connection.CreateCommand();
+                cmd.CommandText = "INSERT OR IGNORE INTO timeline (year, celebrity_death, scientific_discovery) VALUES ($year, $celebrity_death, $scientific_discovery)";
+                cmd.Parameters.AddWithValue("$year", int.Parse(parts[0].Trim()));
+                cmd.Parameters.AddWithValue("$celebrity_death", parts[1].Trim());
+                cmd.Parameters.AddWithValue("$scientific_discovery", parts[2].Trim());
+                cmd.ExecuteNonQuery();
+            }
+        }
+
+        private static void StocksCsvUpload(SqliteConnection connection, string path)
+        {
+            var countCmd = connection.CreateCommand();
+            countCmd.CommandText = "SELECT COUNT(*) FROM \"6f6eb17d4388c8c0ec0ba5555ef7312722c02d453aa0ce16869aadc9f001f3fb\"";
+            if ((long)countCmd.ExecuteScalar() > 0) return;
+
+            foreach (var line in File.ReadAllLines(path).Skip(1))
+            {
+                var parts = line.Split(",");
+                var cmd = connection.CreateCommand();
+                cmd.CommandText = "INSERT OR IGNORE INTO \"6f6eb17d4388c8c0ec0ba5555ef7312722c02d453aa0ce16869aadc9f001f3fb\" (ticker, peak_price, peak_year, low_price, low_year, key) VALUES ($ticker, $peak_price, $peak_year, $low_price, $low_year, $key)";
+                cmd.Parameters.AddWithValue("$ticker", parts[0].Trim());
+                cmd.Parameters.AddWithValue("$peak_price", long.Parse(parts[1].Trim()));
+                cmd.Parameters.AddWithValue("$peak_year", int.Parse(parts[2].Trim()));
+                cmd.Parameters.AddWithValue("$low_price", long.Parse(parts[3].Trim()));
+                cmd.Parameters.AddWithValue("$low_year", int.Parse(parts[4].Trim()));
+                cmd.Parameters.AddWithValue("$key", parts[5].Trim());
+                cmd.ExecuteNonQuery();
+            }
+        }
+
         private static void MovieCsvUpload(SqliteConnection connection, string path)
         {
+            var countCmd = connection.CreateCommand();
+            countCmd.CommandText = "SELECT COUNT(*) FROM movies";
+            if ((long)countCmd.ExecuteScalar() > 0) return;
+
             foreach (var line in File.ReadAllLines(path).Skip(1))
             {
                 var parts = line.Split(",");
@@ -89,6 +163,10 @@ namespace InsecureWebsite.Models
 
         private static void SeedUnreleased(SqliteConnection connection)
         {
+            var countCmd = connection.CreateCommand();
+            countCmd.CommandText = "SELECT COUNT(*) FROM unreleased";
+            if ((long)countCmd.ExecuteScalar() > 0) return;
+
             var cmd = connection.CreateCommand();
             cmd.CommandText = "INSERT OR IGNORE INTO unreleased (id, name, rating, budget, release) VALUES (1, 'The Matrix 5-tastic and Furious', 9.9, 3500000000, 2036)";
             cmd.ExecuteNonQuery();
@@ -96,6 +174,10 @@ namespace InsecureWebsite.Models
 
         private static void CountryCsvUpload(SqliteConnection connection, string path)
         {
+            var countCmd = connection.CreateCommand();
+            countCmd.CommandText = "SELECT COUNT(*) FROM countries";
+            if ((long)countCmd.ExecuteScalar() > 0) return;
+
             foreach (var line in File.ReadAllLines(path).Skip(1))
             {
                 var parts = line.Split(",");
@@ -111,6 +193,10 @@ namespace InsecureWebsite.Models
 
         private static void ExtinctCsvUpload(SqliteConnection connection, string path)
         {
+            var countCmd = connection.CreateCommand();
+            countCmd.CommandText = "SELECT COUNT(*) FROM extinct";
+            if ((long)countCmd.ExecuteScalar() > 0) return;
+
             foreach (var line in File.ReadAllLines(path).Skip(1))
             {
                 var parts = line.Split(",");
@@ -118,6 +204,7 @@ namespace InsecureWebsite.Models
                 cmd.CommandText = "INSERT OR IGNORE INTO extinct (name, cause) VALUES ($name, $cause)";
                 cmd.Parameters.AddWithValue("$name", parts[0].Trim());
                 cmd.Parameters.AddWithValue("$cause", parts[1].Trim());
+                cmd.ExecuteNonQuery();
             }
         }
         

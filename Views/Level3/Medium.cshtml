@@ -1,0 +1,58 @@
+@{
+    ViewData["Title"] = "Medium";
+}
+<h1>Time Traveler's Country Facts</h1>
+<br />
+
+<p>
+    The time traveler has a database of countries with some very interesting future statistics.
+    However, he seems to have also kept a list of countries that are now extinct in a table titled "extint".
+    In this table he accidentally left a hash which happens to be the flag for this level as well as the 
+    table name he set up on another more dangerous database. Even time travlers can make mistakes!
+    <br/>
+    <br/>
+    Note: The time travler has learned their lesson and now removed key SQL word "UNION" from the input,
+    along with filtering out the "--" symbol as well. Surely this will be enough.
+</p>
+
+<br />
+<br />
+
+<h2>Country Search</h2>
+<form method="post">
+    <input type="text" name="search" value="@ViewBag.Search" placeholder="Enter Country Name" />
+    <button type="submit">Search</button>
+</form>
+
+@if (ViewBag.Results != null)
+{
+    <ul>
+        @foreach (var row in ViewBag.Results)
+        {
+            <li>
+                <img src="https://flagcdn.com/24x18/@(row.Item2).png" alt="flag" />
+                @row.Item1
+            </li>
+        }
+    </ul>
+}
+
+<br />
+<br />
+
+<div style="margin-top: 2rem;">
+    <h2>Submit Flag</h2>
+    <form method="post" asp-action="MediumFlag">
+        <input type="text" name="flag" placeholder="Enter extinct country name" />
+        <button type="submit">Submit</button>
+    </form>
+    @if (ViewBag.FlagError != null)
+    {
+        <p>@ViewBag.FlagError</p>
+    }
+</div>
+
+<br />
+<br />
+<br />
+<a href="https://portswigger.net/web-security/sql-injection/cheat-sheet">Sanitized Injection Help</a>
