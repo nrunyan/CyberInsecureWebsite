@@ -67,7 +67,7 @@ namespace InsecureWebsite.Models
                 celebrity_death TEXT NOT NULL,
                 scientific_discovery TEXT NOT NULL
             );
-            CREATE TABLE IF NOT EXISTS "6f6eb17d4388c8c0ec0ba5555ef7312722c02d453aa0ce16869aadc9f001f3fb" (
+            CREATE TABLE IF NOT EXISTS vault (
                 id INTEGER PRIMARY KEY,
                 ticker TEXT NOT NULL,
                 peak_price INTEGER NOT NULL,
@@ -79,7 +79,7 @@ namespace InsecureWebsite.Models
             """;
             criticalCmd.ExecuteNonQuery();
             TimelineCsvUpload(criticalConn, "Data/timeline.csv");
-            StocksCsvUpload(criticalConn, "Data/6f6eb17d4388c8c0ec0ba5555ef7312722c02d453aa0ce16869aadc9f001f3fb.csv");
+            StocksCsvUpload(criticalConn, "Data/vault.csv");
         }
 
         public static SqliteConnection GetFactsConnection()
@@ -124,14 +124,14 @@ namespace InsecureWebsite.Models
         private static void StocksCsvUpload(SqliteConnection connection, string path)
         {
             var countCmd = connection.CreateCommand();
-            countCmd.CommandText = "SELECT COUNT(*) FROM \"6f6eb17d4388c8c0ec0ba5555ef7312722c02d453aa0ce16869aadc9f001f3fb\"";
+            countCmd.CommandText = "SELECT COUNT(*) FROM vault";
             if ((long)countCmd.ExecuteScalar() > 0) return;
 
             foreach (var line in File.ReadAllLines(path).Skip(1))
             {
                 var parts = line.Split(",");
                 var cmd = connection.CreateCommand();
-                cmd.CommandText = "INSERT OR IGNORE INTO \"6f6eb17d4388c8c0ec0ba5555ef7312722c02d453aa0ce16869aadc9f001f3fb\" (ticker, peak_price, peak_year, low_price, low_year, key) VALUES ($ticker, $peak_price, $peak_year, $low_price, $low_year, $key)";
+                cmd.CommandText = "INSERT OR IGNORE INTO vault (ticker, peak_price, peak_year, low_price, low_year, key) VALUES ($ticker, $peak_price, $peak_year, $low_price, $low_year, $key)";
                 cmd.Parameters.AddWithValue("$ticker", parts[0].Trim());
                 cmd.Parameters.AddWithValue("$peak_price", long.Parse(parts[1].Trim()));
                 cmd.Parameters.AddWithValue("$peak_year", int.Parse(parts[2].Trim()));

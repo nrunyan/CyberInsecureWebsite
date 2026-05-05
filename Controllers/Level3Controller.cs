@@ -102,20 +102,20 @@ public class Level3Controller : Controller
     {
         search = search.Replace("'", "").Replace("\"", "");
         search = search.Replace("--", "").Replace("/*", "").Replace("*/", "");
-        search = Regex.Replace(search, "union",    "", RegexOptions.IgnoreCase);
-        search = Regex.Replace(search, "select",   "", RegexOptions.IgnoreCase);
-        search = Regex.Replace(search, "from",     "", RegexOptions.IgnoreCase);
-        search = Regex.Replace(search, "where",    "", RegexOptions.IgnoreCase);
-        search = Regex.Replace(search, "insert",   "", RegexOptions.IgnoreCase);
-        search = Regex.Replace(search, "update",   "", RegexOptions.IgnoreCase);
-        search = Regex.Replace(search, "delete",   "", RegexOptions.IgnoreCase);
-        search = Regex.Replace(search, "drop",     "", RegexOptions.IgnoreCase);
-        search = Regex.Replace(search, "table",    "", RegexOptions.IgnoreCase);
+        search = Regex.Replace(search, "union", "", RegexOptions.IgnoreCase);
+        search = Regex.Replace(search, "select", "", RegexOptions.IgnoreCase);
+        search = Regex.Replace(search, "from", "", RegexOptions.IgnoreCase);
+        search = Regex.Replace(search, "where", "", RegexOptions.IgnoreCase);
+        search = Regex.Replace(search, "insert", "", RegexOptions.IgnoreCase);
+        search = Regex.Replace(search, "update", "", RegexOptions.IgnoreCase);
+        search = Regex.Replace(search, "delete", "", RegexOptions.IgnoreCase);
+        search = Regex.Replace(search, "drop", "", RegexOptions.IgnoreCase);
+        search = Regex.Replace(search, "table", "", RegexOptions.IgnoreCase);
         search = Regex.Replace(search, "database", "", RegexOptions.IgnoreCase);
-        search = Regex.Replace(search, "join",     "", RegexOptions.IgnoreCase);
-        search = Regex.Replace(search, "having",   "", RegexOptions.IgnoreCase);
-        search = Regex.Replace(search, "order",    "", RegexOptions.IgnoreCase);
-        search = Regex.Replace(search, "limit",    "", RegexOptions.IgnoreCase);
+        search = Regex.Replace(search, "join", "", RegexOptions.IgnoreCase);
+        search = Regex.Replace(search, "having", "", RegexOptions.IgnoreCase);
+        search = Regex.Replace(search, "order", "", RegexOptions.IgnoreCase);
+        search = Regex.Replace(search, "limit", "", RegexOptions.IgnoreCase);
 
         var results = new List<string>();
 
@@ -135,7 +135,7 @@ public class Level3Controller : Controller
     [HttpPost]
     public IActionResult HardFlag(string flag)
     {
-        if (flag == "13371337")
+        if (flag == "LOCK")
         {
             HttpContext.Session.SetString("hard_complete", "true");
             return RedirectToAction("Index", "Hub");
