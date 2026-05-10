@@ -19,8 +19,16 @@ public class Level1Controller : Controller
     [HttpPost]
     public IActionResult Login(Username u)
     {
+        Console.WriteLine(u.Name);
+        Console.WriteLine(u.Password);
+        
+        if(u.Name=="Vinnie Gar" && u.Password == "PickleMe") //oh how foolish, a pickle joke
+        {
+            Console.WriteLine("Here");
+            return View("Congratulations",new Congrats("LoginLevel1","Please return to the hub and reselect login to move on"));
+        }
         Repository.AddUsername(u);
-        return View("Thanks", u);
+        return View("Thanks",u);
     }
 
     [HttpGet]

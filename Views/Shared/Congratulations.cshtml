@@ -1,0 +1,9 @@
+@model InsecureWebsite.Models.Congrats
+<h1>Congrats user!</h1>
+<p>You can procede to the next level!</p>
+<p>@Model.Instructions</p>
+<script>
+    localStorage.setItem(@Model.Level,"Success");
+</script>
+<a asp-controller="Hub" asp-action="Index">Return home</a>
+

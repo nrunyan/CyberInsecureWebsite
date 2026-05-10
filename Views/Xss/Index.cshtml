@@ -1,0 +1,18 @@
+@{
+    ViewBag.Title = "XSS level 1";
+}
+
+<h2>XSS</h2>
+
+<form method="post">
+    <input type="text" name="userInput" placeholder="Some humble text..." />
+    <button type="submit">Submit</button>
+</form>
+
+@if (ViewBag.Output != null)
+{
+    <p>Output:</p>
+    <div>
+        @Html.Raw(ViewBag.Output)
+    </div>
+}
