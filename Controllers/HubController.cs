@@ -34,6 +34,12 @@ public class HubController : Controller
         Description = "Pass the three difficulties of SQL injection",
         Controller = "Level3",
         Action = "Easy"});
+
+        levels.Add(new Level { Number = 4,
+        Name = "Command_I",
+        Description = "Use Command Injection To Exploit this Network Diagnostic Tool",
+        Controller = "Level4",
+        Action = "Index"});
         
         return View(levels);
     }

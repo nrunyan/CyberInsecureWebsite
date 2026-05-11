@@ -1,0 +1,48 @@
+@model InsecureWebsite.Models.FakeSystem
+@{
+    ViewData["Title"] = "CommandInjection";
+}
+
+<h2>Level 0 — Command Injection</h2>
+<br />
+<p>
+    Execute a simple command injection. This network diagnostics tool
+    didn't properly sanitize its input and used it to directly make a
+    system call. Try to break out of the ping command and read the file 
+    "flag.txt"
+</p>
+
+<h3> Network Diagnostic Tool! </h3>
+<form method="post">
+    @Html.AntiForgeryToken()
+
+    <label for="host">Host or IP address</label>
+    <input id="host" name="host" class="form-control" />
+
+    <button type="submit">Run Diagnostic</button>
+</form>
+
+@if (ViewBag.Output != null)
+{
+    <pre>@ViewBag.Output</pre>
+}
+
+<hr />
+
+<h3>Submit Flag</h3>
+
+<form asp-action="SubmitFlag" method="post">
+    @Html.AntiForgeryToken()
+
+    <label for="flag">Contents of flag.txt</label>
+    <input id="flag" name="flag" class="form-control" />
+
+    <button type="submit" class="btn btn-success mt-2">
+        Submit
+    </button>
+</form>
+
+@if (ViewBag.FlagError != null)
+{
+    <p class="text-danger">@ViewBag.FlagError</p>
+}
