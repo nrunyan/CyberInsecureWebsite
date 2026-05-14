@@ -19,7 +19,7 @@ public class HubController : Controller
         // For each new level add a controller and link it through here
         levels.Add(new Level { Number = 1, 
         Name = "Login", 
-        Description = "asdf",  // Description can be w/e, I was thinking of displaying it somewhere on button hover???
+        Description = "Explore Weak Authentication Vulnerabilities",  // Description can be w/e, I was thinking of displaying it somewhere on button hover???
         Controller = "Level1",
         Action = "Index"}); // Where you want the redirect to point to in your URI
                             // ie "..../Level1/login" then we put "login"
@@ -43,7 +43,7 @@ public class HubController : Controller
 
         levels.Add(new Level { Number = 5,
         Name = "Database Exploitation",
-        Description = "TODO",
+        Description = "Explore the Vulnerabilities of Embedded Vector Databases",
         Controller = "Level1",
         Action = "SearchVulnerability"});
         
