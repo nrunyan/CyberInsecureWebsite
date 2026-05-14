@@ -4,15 +4,59 @@
 
 <h2>Level 2 — XSS</h2>
 
+
 <form asp-controller="Level2" asp-action="Index" method="post">
-    <input type="text" name="userInput" placeholder="Some humble text..." />
+    <input type="text"
+           name="userInput"
+           placeholder="Some humble text..." />
+
     <button type="submit">Submit</button>
 </form>
 
+@*Now see if they have this flag already*@
+<form asp-controller="Level2" asp-action="CheckFlag" method="post">
+    <input type="text"
+           name="userInput"
+           placeholder="Some humble text..." />
+
+    <button type="submit">Enter Flag</button>
+</form>
+
+<p>To beat this level, call the function <b>solve()</b></p>
+<p>Script tags have been blocked.</p>
 @if (ViewBag.Output != null)
 {
     <p>Output:</p>
+
     <div>
         @Html.Raw(ViewBag.Output)
     </div>
 }
+
+<script>
+function solve() {
+
+    fetch('/Level2/Solved', {
+        method: 'POST'
+    })
+    .then(response => response.text())
+    .then(data => {
+
+        const flag = document.createElement("p");
+
+        flag.style.color = "lime";
+        flag.innerText = data;
+
+        document.body.appendChild(flag);
+    });
+}
+</script>
+
+<details>
+    <summary>Hint 1</summary>
+    <p>Try entering some script tags in the input box.</p>  
+</details>
+<details>
+    <summary>Answer</summary>
+    <p>&lt;img src=x onerror=solve()&gt;</p>
+</details>

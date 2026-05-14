@@ -40,6 +40,12 @@ public class HubController : Controller
         Description = "Use Command Injection To Exploit this Network Diagnostic Tool",
         Controller = "Level4",
         Action = "Index"});
+
+        levels.Add(new Level { Number = 5,
+        Name = "Database Exploitation",
+        Description = "TODO",
+        Controller = "Level1",
+        Action = "SearchVulnerability"});
         
         return View(levels);
     }

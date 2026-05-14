@@ -1,0 +1,35 @@
+@* so for this one we want to create a form to change the password, but they have to answer some 
+security questions first, but we'll make the security discoverable and wont add any additional security measures *@
+@model InsecureWebsite.Models.Username
+@{
+    ViewData["Title"] = "Change Password";
+}   
+<div class="text-center">
+    <h1>Change Password</h1>
+    <p>Please answer the security question to change your password.</p>
+    <p><strong>What is Vinnie's favorite food?</strong></p>
+    <p><strong>DON'T PUT IN ACTUAL PASSWORDS PLEASE</strong></p>
+</div>
+<p>
+    <label for="securityQuestion">Answer:</label>
+    <input type="text" id="securityQuestion" name="securityQuestion" placeholder="Answer">
+</p>
+@*redirects to the change password page*@
+<form asp-controller="Level2" asp-action="ChangePass" method="post">
+    <p>
+        <label asp-for="Name">Username:</label>
+        <input asp-for="Name" />
+    </p>
+    <p>
+        <label asp-for="Password">New Password:</label>
+        <input asp-for="Password" />
+    </p>
+    <button type="submit">Reset Password</button>
+</form> 
+@* and then they have to find the date of vinnies birthday, but they can also brute force it *@
+<p><strong>Hint: Vinnie's birthday is on the same day as a major holiday</strong></p>
+@*so now we need a data input for the birthday*@
+<p>
+    <label for="birthday">Birthday:</label>
+    <input type="text" id="birthday" name="birthday" placeholder="MM/DD/YYYY">
+</p>    

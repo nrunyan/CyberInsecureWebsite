@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /Admin
+Disallow: /internal
+Disallow: /beta-login

@@ -1,0 +1,21 @@
+@model InsecureWebsite.Models.Employee
+
+<h2>@Model.Username's Profile</h2>
+
+<p>Department: @Model.Department</p>
+
+<p>
+    Current password:
+    @Model.Password
+    
+</p>
+
+<details>
+    <summary>Hint 1</summary>
+    <p>Look at the URL</p>
+</details>
+
+<details>
+    <summary>Hint 2</summary>
+    <p>What happens when you change the query string in the URL?</p>
+</details>

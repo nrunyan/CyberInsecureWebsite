@@ -1,0 +1,49 @@
+@model InsecureWebsite.Models.Username
+@{
+    ViewData["Title"] = "Login";
+}
+
+<div class="text-center">
+    <h1>Level 3 — Login</h1>
+    <p>Please Login.</p>
+    <p><strong>DON'T PUT IN ACTUAL PASSWORDS PLEASE</strong></p>
+</div>
+@*Check viewbag for responce*@
+@if (ViewBag.Error != null)
+{
+    <p style="color: red;">@ViewBag.Error</p>
+}  
+<p>To beat this level, Please login as an administrator<p>
+<form asp-controller="Level3" asp-action="Login" method="post">
+    <p>
+        <label asp-for="Name">Username:</label>
+        <input asp-for="Name" />
+    </p>
+    <p>
+        <label asp-for="Password">Password:</label>
+        <input asp-for="Password" />
+    </p>
+    <button type="submit">Login</button>
+</form>
+
+@*redirects to the change password page*@
+
+
+<details>
+    <summary>Hint 1</summary>
+    <p>What are common administrator usernames?</p>
+
+</details>
+<details>
+    <summary>Hint 2</summary>
+    <p>What does the login error message tell you about the username?</p>
+
+</details>
+<details>
+    <summary>Hint 3</summary>
+    <p>Try using the username "admin"</p>
+</details>  
+<details>
+    <summary>Hint 4</summary>
+    <p>the most common passwords are: password1, 123456, qwerty, password, admin, setup</p>
+</details>

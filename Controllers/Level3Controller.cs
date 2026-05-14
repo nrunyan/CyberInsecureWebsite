@@ -144,4 +144,85 @@ public class Level3Controller : Controller
         ViewBag.FlagError = "Wrong flag!";
         return View("Hard");
     }
+
+
+
+
+    public IActionResult Login()
+    {
+        //for this one
+        return View();
+    }
+
+    [HttpPost]
+    public IActionResult Login(string Name, string Password)
+    {
+        if(Name=="admin" && Password == "qwerty") 
+        {
+            Congrats c = new Congrats("Login","Congratulations on beating level 3! Please return to the hub to select the next level");
+            c.NextLevel=false;
+            return View("Congratulations", c);
+        }else if(Name=="admin" && Password != "qwerty")
+        {
+             ViewBag.Error = "Wrong password for admin user!";
+             return View("Login");
+        }
+        else
+        {
+            ViewBag.Error = "No such user!";
+            return View("Login");
+        }
+        
+        return View();
+    }
+
+    public IActionResult Xss()
+    {
+        return View();
+    }
+
+    [HttpPost]
+    public IActionResult Xss(string userInput)
+    {
+        string filtered = userInput;
+
+        filtered = filtered.Replace("script", "noscript");
+        filtered = filtered.Replace("onerror", "noerror");
+        filtered = filtered.Replace("alert", "");
+        filtered = filtered.Replace("javascript:", "ahhhhhh");
+        filtered = filtered.Replace("img:", "ahhhhhhhh");
+
+        ViewBag.Output = filtered;
+
+        return View();
+    }
+
+    [HttpPost]
+    public IActionResult Solved()
+    {
+        return Content("Flag{watch_out_for_that_bear_behind_you}");
+    }
+
+    [HttpPost]
+    public IActionResult CheckFlag(string userInput)
+    {
+        if(userInput == "Flag{watch_out_for_that_bear_behind_you}")
+        {
+            Congrats c = new Congrats(
+                "Xss",
+                "Congratulations on solving the flag!",
+                false,
+                "Level3"
+            );
+            Console.WriteLine("Flag Solved!");
+    
+            return View("Congratulations", c);
+        }
+    
+        ViewBag.FlagError = "Wrong flag!";
+    
+        return View("Index");
+    }
+
+    
 }

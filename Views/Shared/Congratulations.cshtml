@@ -7,3 +7,10 @@
 </script>
 <a asp-controller="Hub" asp-action="Index">Return home</a>
 
+@if(Model.NextLevel)
+{
+    <div class="text-center mt-3">
+        <a asp-controller=@Model.NextLevelController asp-action=@Model.Level class="btn btn-primary">Go to Level @Model.NextLevelController</a>
+    </div>
+}
+

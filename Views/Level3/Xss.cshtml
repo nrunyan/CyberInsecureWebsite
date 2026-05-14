@@ -1,0 +1,56 @@
+@{
+    ViewData["Title"] = "Hard XSS";
+}
+
+<h2>Level 3 —  XSS</h2>
+<p>Due to pesky people putting up malicious comments, we've implemented strict filtering.
+    Thats right! No more script tags! No more alert! No more javascript! No more onerror!
+    No more img!
+    
+</p>
+<p>To beat this level, call the function <b>solve()</b></p>
+<form method="post">
+    <input type="text"
+           name="userInput"
+           placeholder="Some humble text..." />
+
+    <button type="submit">
+        Submit
+    </button>
+</form>
+
+<form asp-controller="Level3" asp-action="CheckFlag" method="post">
+    <input type="text"
+           name="userInput"
+           placeholder="Some humble text..." />
+
+    <button type="submit">Enter Flag</button>
+</form>
+
+@if(ViewBag.Output != null)
+{
+    <div class="output">
+        @Html.Raw(ViewBag.Output)
+    </div>
+}
+
+<script>
+function solve() {
+    fetch('/Level3/Solved', {
+        method: 'POST'
+    })
+    .then(r => r.text())
+    .then(flag => {
+        document.body.innerHTML +=
+            `<p style="color:lime">${flag}</p>`;
+    });
+}
+</script>
+
+<details>
+    <summary>Answer</summary>
+    <p>&lt;svg onload=solve()&gt;</p>
+    <p>
+        or &lt;input autofocus onfocus=solve()&gt;
+    </p>
+</details>
